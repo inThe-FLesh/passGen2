@@ -1,3 +1,24 @@
+
+/******************************************************************************
+ * Copyright (c) 2024 Ross Gray
+ *
+ * This file is part of passGen2.
+ *
+ * passGen2 is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * passGen2 is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with passGen2. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *****************************************************************************/
+
 #include "converter.h"
 #include <cassert>
 #include <cinttypes>
@@ -64,8 +85,8 @@ public:
         // doing the switch of the left and right halves with the mod of i
         // pointers are used so that I don't have to waste instructions by
         // putting the values back into the array
-          uint32_t *leftBytes = &cipherRound[0];
-          uint32_t *rightBytes = &cipherRound[1];
+        uint32_t *leftBytes = &cipherRound[0];
+        uint32_t *rightBytes = &cipherRound[1];
 
         *leftBytes = *leftBytes ^ P[i];
         *leftBytes = f(*leftBytes);
