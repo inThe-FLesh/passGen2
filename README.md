@@ -4,7 +4,13 @@
 This project is a simple terminal app that will generate a secure password from a given input.
 
 ## Installation
-Linux and Windows binaries can be found in the release page of the project. To install just download and run the program.
+Linux and Windows binaries can be found in the release page of the project. 
+
+Releases: (https://github.com/inThe-FLesh/passGen2/releases/latest "Latest Release")
+
+To install just download and run the program.
+
+I add mine the the /usr/bin/ directory to allow me to run it from any terminal.
 
 You can also compile the program from source.
 
