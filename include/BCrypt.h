@@ -28,7 +28,6 @@
 #include <string>
 #include <sys/time.h>
 #include <sys/types.h>
-#include <termios.h>
 
 using std::cout;
 using std::endl;

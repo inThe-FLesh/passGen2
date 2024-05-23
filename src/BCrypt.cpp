@@ -24,30 +24,6 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
-#include <termios.h>
-#include <unistd.h>
-
-void HideStdinKeystrokes() {
-  termios tty;
-
-  tcgetattr(STDIN_FILENO, &tty);
-
-  /* we want to disable echo */
-  tty.c_lflag &= ~ECHO;
-
-  tcsetattr(STDIN_FILENO, TCSANOW, &tty);
-}
-
-void ShowStdinKeystrokes() {
-  termios tty;
-
-  tcgetattr(STDIN_FILENO, &tty);
-
-  /* we want to reenable echo */
-  tty.c_lflag |= ECHO;
-
-  tcsetattr(STDIN_FILENO, TCSANOW, &tty);
-}
 
 std::string concatenateHash(int cost, uint8_t *salt, uint64_t *ciphers) {
   Converter converter;
@@ -136,7 +112,8 @@ uint8_t *pass_input(int *passwordLength) {
   uint8_t *passwordReturn = nullptr;
 
   while (!passwordCorrect) {
-    HideStdinKeystrokes();
+
+    // fix the input hiding for windows here
     std::cout << "Enter Password: ";
     std::cin >> password;
 
@@ -146,7 +123,6 @@ uint8_t *pass_input(int *passwordLength) {
     std::cin >> passwordCheck;
 
     std::cout << "\n";
-    ShowStdinKeystrokes();
 
     if (password.compare(passwordCheck) == 0) {
       *passwordLength = password.length();
@@ -192,4 +168,7 @@ int main() {
     std::cerr << "Password read failed" << std::endl;
     exit(EXIT_FAILURE);
   }
+
+  delete passwordLength;
+  delete salt;
 }
