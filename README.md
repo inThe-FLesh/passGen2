@@ -4,7 +4,13 @@
 This project is a simple terminal app that will generate a secure password from a given input.
 
 ## Installation
-Linux and Windows binaries can be found in the release page of the project. To install just download and run the program.
+Linux and Windows binaries can be found in the release page of the project. 
+
+Releases: [Latest Release](https://github.com/inThe-FLesh/passGen2/releases/latest)
+
+To install just download and run the program.
+
+I add mine the the /usr/bin/ directory to allow me to run it from any terminal.
 
 You can also compile the program from source.
 
@@ -16,10 +22,10 @@ The source code provided comes with a meson.build file.
 #### Prerequisites 
 In order to compile the code you will need to:
 - install meson
-    meson installation instructions can be found here (https://mesonbuild.com/Getting-meson.html "Meson Installation")
+    meson installation instructions can be found here [Meson Installation Instructions](https://mesonbuild.com/Getting-meson.html)
 - install a C++ compiler
     if you are using linux you most likely have gcc installed; or something similar.
-    if you are using windows (https://paddyts.medium.com/how-to-install-mingw-on-windows-10-gcc-8-2-0-9a9074383af9 "Installing MinGW or GCC")
+    if you are using windows [Windows MinGW or GCC install](https://paddyts.medium.com/how-to-install-mingw-on-windows-10-gcc-8-2-0-9a9074383af9)
   please note: I am not entirely familiar with compiling C++ on windows. I do all my work in the linux terminal and there would be better people to ask if you want to get it working.
 
 #### Clone the Repository
