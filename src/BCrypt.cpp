@@ -24,6 +24,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include <regex>
 
 std::string concatenateHash(int cost, uint8_t *salt, uint64_t *ciphers) {
   Converter converter;
