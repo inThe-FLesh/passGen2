@@ -43,9 +43,13 @@ std::string concatenateHash(int cost, uint8_t *salt, uint64_t *ciphers) {
   saltString = base64_encode(saltString);
   cipherString = base64_encode(cipherString);
 
+  std::regex validChars("[^a-zA-Z0-9!@#$%^&*()]");
+
   saltString = saltString.substr(0, 4);
 
   std::string output = alg + cipherString + costString + saltString;
+
+  output = std::regex_replace(output, validChars, "");
 
   return output;
 }
