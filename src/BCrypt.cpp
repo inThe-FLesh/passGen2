@@ -192,4 +192,8 @@ int main() {
     std::cerr << "Password read failed" << std::endl;
     exit(EXIT_FAILURE);
   }
+
+  delete salt;
+  delete password;
+  delete passwordLength;
 }
