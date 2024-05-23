@@ -157,7 +157,7 @@ uint8_t *gen_salt(uint8_t *salt, uint8_t *password, int passwordLength) {
   return newSalt;
 }
 
-int main() {
+void gen_pass() {
   int cost = 4;
   int *passwordLength = new int(0);
   uint8_t defaultSalt[16] = {0x47, 0xD8, 0x7F, 0x70, 0x83, 0xF3, 0xD2, 0x08,
@@ -176,4 +176,20 @@ int main() {
 
   delete passwordLength;
   delete salt;
+}
+
+int main() {
+  bool exit = false;
+  char choice;
+
+  while (!exit) {
+    gen_pass();
+
+    std::cout << "Exit? (Y/n): ";
+    std::cin >> choice;
+
+    if (choice == 'n') {
+      exit = true;
+    }
+  }
 }
