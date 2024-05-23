@@ -188,7 +188,7 @@ int main() {
     std::cout << "Exit? (Y/n): ";
     std::cin >> choice;
 
-    if (choice == 'n') {
+    if (!(choice == 'n')) {
       exit = true;
     }
   }
