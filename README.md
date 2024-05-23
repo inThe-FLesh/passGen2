@@ -6,6 +6,44 @@ This project is a simple terminal app that will generate a secure password from 
 ## Installation
 Linux and Windows binaries can be found in the release page of the project. To install just download and run the program.
 
+You can also compile the program from source.
+
+The source code provided comes with a meson.build file.
+
+### Compiling From Source:
+*for a typical linux machine*
+
+#### Prerequisites 
+In order to compile the code you will need to:
+- install meson
+    meson installation instructions can be found here (https://mesonbuild.com/Getting-meson.html "Meson Installation")
+- install a C++ compiler
+    if you are using linux you most likely have gcc installed; or something similar.
+    if you are using windows (https://paddyts.medium.com/how-to-install-mingw-on-windows-10-gcc-8-2-0-9a9074383af9 "Installing MinGW or GCC")
+  please note: I am not entirely familiar with compiling C++ on windows. I do all my work in the linux terminal and there would be better people to ask if you want to get it working.
+
+#### Clone the Repository
+SSH: `git clone git@github.com:inThe-FLesh/passGen2.git`
+**or**
+HTTPS: `git clone https://github.com/inThe-FLesh/passGen2.git`
+
+#### Setup the Meson Build Directory
+cd into the cloned directory 
+`cd passGen2`
+
+run
+`meson setup builddir`
+
+you can replace "builddir" with whatever you like, it is just what I prefer to use.
+
+#### Compile
+run
+`meson compile -C builddir`
+
+Ensure that the compilation runs without any errors, and voila! There should be a binary in the builddir directory.
+
+Meson should auto-detect the compiler for your system and run without issue. The program doesn't use any libraries and has no dependencies. Everything you need is contained in the repo.
+
 ## Usage
 The program will ask you to enter a password and will print the secure password it has generated. 
 Simply copy that password into your password manager, write it down, or paste it directly into a login page.
